@@ -12,7 +12,7 @@ export default function HomePage({
   const t = locale === "zh"
     ? {
         welcome: "欢迎来到我的创作空间",
-        subtitle: "我是 [你的名字]，一名热衷于创造有趣且实用应用的开发者。",
+        subtitle: "我是老王，一名热衷于创造有趣且实用应用的开发者。",
         explore: "探索我的应用",
         philosophy: {
           title: "设计理念",
@@ -25,7 +25,7 @@ export default function HomePage({
       }
     : {
         welcome: "Welcome to My Creative Space",
-        subtitle: "I'm [Your Name], a developer passionate about creating fun and useful applications.",
+        subtitle: "I'm Lao Wang, a developer passionate about creating fun and useful applications.",
         explore: "Explore My Apps",
         philosophy: {
           title: "Philosophy",
