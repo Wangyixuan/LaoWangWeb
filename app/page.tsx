@@ -2,40 +2,20 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Code, Sparkles, Layout } from "lucide-react"
 
-export default function HomePage({
-  searchParams,
-}: {
-  searchParams: { lang?: string }
-}) {
-  const locale = (searchParams.lang || "zh") as "zh" | "en"
-  
-  const t = locale === "zh"
-    ? {
-        welcome: "欢迎来到我的创作空间",
-        subtitle: "我是老王，一名热衷于创造有趣且实用应用的开发者。",
-        explore: "探索我的应用",
-        philosophy: {
-          title: "设计理念",
-          items: [
-            { title: "极简主义", desc: "专注于核心价值，拒绝冗余功能。", icon: <Layout className="w-8 h-8 text-blue-500" /> },
-            { title: "用户体验", desc: "每一处细节都经过精心打磨。", icon: <Sparkles className="w-8 h-8 text-purple-500" /> },
-            { title: "技术驱动", desc: "使用最前沿的技术构建稳定应用。", icon: <Code className="w-8 h-8 text-indigo-500" /> },
-          ]
-        },
-      }
-    : {
-        welcome: "Welcome to My Creative Space",
-        subtitle: "I'm Lao Wang, a developer passionate about creating fun and useful applications.",
-        explore: "Explore My Apps",
-        philosophy: {
-          title: "Philosophy",
-          items: [
-            { title: "Minimalism", desc: "Focus on core value, reject redundant features.", icon: <Layout className="w-8 h-8 text-blue-500" /> },
-            { title: "User Experience", desc: "Every detail is carefully polished.", icon: <Sparkles className="w-8 h-8 text-purple-500" /> },
-            { title: "Tech Driven", desc: "Build stable apps with cutting-edge tech.", icon: <Code className="w-8 h-8 text-indigo-500" /> },
-          ]
-        },
-      }
+export default function HomePage() {
+  const t = {
+    welcome: "Welcome to My Creative Space",
+    subtitle: "I'm Lao Wang, a developer passionate about creating fun and useful applications.",
+    explore: "Explore My Apps",
+    philosophy: {
+      title: "Philosophy",
+      items: [
+        { title: "Minimalism", desc: "Focus on core value, reject redundant features.", icon: <Layout className="w-8 h-8 text-blue-500" /> },
+        { title: "User Experience", desc: "Every detail is carefully polished.", icon: <Sparkles className="w-8 h-8 text-purple-500" /> },
+        { title: "Tech Driven", desc: "Build stable apps with cutting-edge tech.", icon: <Code className="w-8 h-8 text-indigo-500" /> },
+      ]
+    },
+  }
 
   return (
     <div className="flex flex-col gap-20 py-20">
@@ -48,7 +28,7 @@ export default function HomePage({
           {t.subtitle}
         </p>
         <div className="flex justify-center gap-4">
-          <Link href={`/apps/wefeel?lang=${locale}`}>
+          <Link href="/apps/wefeel">
             <Button size="lg" className="rounded-full px-8">
               {t.explore} <ArrowRight className="ml-2 w-4 h-4" />
             </Button>

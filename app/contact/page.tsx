@@ -1,7 +1,6 @@
 "use client"
 
-import { Suspense, useState } from "react"
-import { useSearchParams } from "next/navigation"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -9,45 +8,33 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 import { Label } from "@/components/ui/label"
 import { supabase } from "@/lib/supabase"
 import imageCompression from "browser-image-compression"
+import Link from "next/link"
 
-function ContactForm() {
-  const searchParams = useSearchParams()
-  const locale = (searchParams.get("lang") || "zh") as "zh" | "en"
+export default function ContactPage() {
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
   const [email, setEmail] = useState("")
   const [content, setContent] = useState("")
   const [files, setFiles] = useState<File[]>([])
 
-  const t = locale === "zh"
-    ? {
-        title: "联系我们",
-        description: "如果您有任何建议或反馈，请告诉我们。",
-        email: "电子邮箱 (选填)",
-        message: "反馈内容 (必填)",
-        image: "上传图片 (可选，最多3张)",
-        submit: "提交反馈",
-        submitting: "提交中...",
-        success: "感谢您的反馈！",
-        successDesc: "我们已经收到您的信息，会尽快处理。",
-        error: "提交失败，请重试",
-        imageLimit: "最多只能上传3张图片",
-        clear: "清除已选",
-      }
-    : {
-        title: "Contact Us",
-        description: "If you have any suggestions or feedback, please let us know.",
-        email: "Email Address (Optional)",
-        message: "Feedback (Required)",
-        image: "Upload Images (Optional, max 3)",
-        submit: "Submit Feedback",
-        submitting: "Submitting...",
-        success: "Thank you for your feedback!",
-        successDesc: "We have received your message and will process it as soon as possible.",
-        error: "Submission failed, please try again",
-        imageLimit: "You can only upload up to 3 images",
-        clear: "Clear selection",
-      }
+  const t = {
+    title: "Contact Us",
+    description: "If you have any suggestions or feedback, please let us know.",
+    email: "Email Address (Optional)",
+    message: "Feedback (Required)",
+    image: "Upload Images (Optional, max 3)",
+    submit: "Submit Feedback",
+    submitting: "Submitting...",
+    success: "Thank you for your feedback!",
+    successDesc: "We have received your message and will process it as soon as possible.",
+    error: "Submission failed, please try again",
+    imageLimit: "You can only upload up to 3 images",
+    clear: "Clear selection",
+    privacy: "Privacy Policy",
+    terms: "Terms of Service",
+    footerNote: "By submitting, you agree to our",
+    and: "and",
+  }
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
@@ -152,7 +139,7 @@ function ContactForm() {
               setContent("")
               setFiles([])
             }}>
-              {locale === "zh" ? "再次提交" : "Submit Again"}
+              Submit Again
             </Button>
           </CardContent>
         </Card>
@@ -171,7 +158,7 @@ function ContactForm() {
                   type="email" 
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder={locale === "zh" ? "your@email.com" : "your@email.com"} 
+                  placeholder="your@email.com" 
                   className="focus-visible:ring-amber-500" 
                 />
               </div>
@@ -182,7 +169,7 @@ function ContactForm() {
                   required
                   value={content}
                   onChange={(e) => setContent(e.target.value)}
-                  placeholder={locale === "zh" ? "请输入您的反馈内容..." : "Please enter your feedback..."}
+                  placeholder="Please enter your feedback..."
                   className="min-h-[150px] focus-visible:ring-amber-500"
                 />
               </div>
@@ -200,7 +187,7 @@ function ContactForm() {
                 {files.length > 0 && (
                   <div className="text-xs text-muted-foreground mt-2 space-y-2">
                     <div className="flex items-center justify-between">
-                      <p className="font-medium">{locale === "zh" ? `已选择 ${files.length} 张图片:` : `Selected ${files.length} images:`}</p>
+                      <p className="font-medium">{`Selected ${files.length} images:`}</p>
                       <button 
                         type="button" 
                         onClick={clearFiles}
@@ -224,18 +211,20 @@ function ContactForm() {
               >
                 {loading ? t.submitting : t.submit}
               </Button>
+              <p className="text-center text-xs text-muted-foreground mt-4">
+                {t.footerNote}{" "}
+                <Link href="/apps/wefeel/privacy" className="text-amber-600 hover:underline">
+                  {t.privacy}
+                </Link>
+                {" "}{t.and}{" "}
+                <Link href="/apps/wefeel/terms" className="text-amber-600 hover:underline">
+                  {t.terms}
+                </Link>
+              </p>
             </form>
           </CardContent>
         </Card>
       )}
     </div>
-  )
-}
-
-export default function ContactPage() {
-  return (
-    <Suspense fallback={<div className="container mx-auto px-4 py-12 text-center">Loading...</div>}>
-      <ContactForm />
-    </Suspense>
   )
 }

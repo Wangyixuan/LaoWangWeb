@@ -2,28 +2,15 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 
-interface HeroProps {
-  locale: "zh" | "en"
-}
-
-export default function Hero({ locale }: HeroProps) {
-  const t = locale === "zh" 
-    ? {
-        title: "We Feel",
-        subtitle: "分享你的感受，连接彼此",
-        description: "一个让你自由表达情感、找到共鸣的平台",
-        download: "下载应用",
-        appStore: "App Store",
-        googlePlay: "Google Play",
-      }
-    : {
-        title: "We Feel",
-        subtitle: "Share your feelings, connect with others",
-        description: "A platform where you can freely express emotions and find resonance",
-        download: "Download App",
-        appStore: "App Store",
-        googlePlay: "Google Play",
-      }
+export default function Hero() {
+  const t = {
+    title: "We Feel",
+    subtitle: "Share your feelings, connect with others",
+    description: "A platform where you can freely express emotions and find resonance",
+    download: "Download App",
+    appStore: "App Store",
+    googlePlay: "Google Play",
+  }
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-yellow-50 to-orange-50 py-20">
