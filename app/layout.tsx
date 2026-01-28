@@ -26,10 +26,12 @@ export default function RootLayout({
         <footer className="border-t bg-gray-50 py-12 mt-20">
           <div className="container mx-auto px-4 text-center space-y-4">
             <div className="flex justify-center gap-6 text-sm text-gray-500">
+              {/* 中文：联系我们入口 */}
               <Link href="/contact" className="hover:text-amber-600 transition-colors font-medium">
                 Contact Us
               </Link>
             </div>
+            {/* 中文：版权说明 —— 2026 Lao Wang，保留所有权利。 */}
             <p className="text-gray-400 text-xs">&copy; 2026 Lao Wang. All rights reserved.</p>
           </div>
         </footer>

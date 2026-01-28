@@ -4,11 +4,17 @@ import { Card } from "@/components/ui/card"
 
 export default function Hero() {
   const t = {
+    // 中文：应用名称 We Feel
     title: "We Feel",
+    // 中文：分享你的感受，与他人建立连接
     subtitle: "Share your feelings, connect with others",
+    // 中文：一个可以自由表达情绪并找到共鸣的平台
     description: "A platform where you can freely express emotions and find resonance",
+    // 中文：下载应用
     download: "Download App",
+    // 中文：苹果应用商店
     appStore: "App Store",
+    // 中文：谷歌应用商店
     googlePlay: "Google Play",
   }
 

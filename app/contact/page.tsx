@@ -18,21 +18,37 @@ export default function ContactPage() {
   const [files, setFiles] = useState<File[]>([])
 
   const t = {
+    // 中文：联系我们
     title: "Contact Us",
+    // 中文：如果你有任何建议或反馈，欢迎告诉我们。
     description: "If you have any suggestions or feedback, please let us know.",
+    // 中文：邮箱地址（可选）
     email: "Email Address (Optional)",
+    // 中文：反馈内容（必填）
     message: "Feedback (Required)",
+    // 中文：上传图片（可选，最多 3 张）
     image: "Upload Images (Optional, max 3)",
+    // 中文：提交反馈
     submit: "Submit Feedback",
+    // 中文：正在提交…
     submitting: "Submitting...",
+    // 中文：感谢你的反馈！
     success: "Thank you for your feedback!",
+    // 中文：我们已收到你的信息，会尽快处理。
     successDesc: "We have received your message and will process it as soon as possible.",
+    // 中文：提交失败，请重试
     error: "Submission failed, please try again",
+    // 中文：你最多只能上传 3 张图片
     imageLimit: "You can only upload up to 3 images",
+    // 中文：清除选择
     clear: "Clear selection",
+    // 中文：隐私政策
     privacy: "Privacy Policy",
+    // 中文：服务条款
     terms: "Terms of Service",
+    // 中文：提交反馈即表示你同意我们的
     footerNote: "By submitting, you agree to our",
+    // 中文：和
     and: "and",
   }
 

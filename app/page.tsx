@@ -4,14 +4,21 @@ import { ArrowRight, Code, Sparkles, Layout } from "lucide-react"
 
 export default function HomePage() {
   const t = {
+    // 中文：欢迎来到我的创作空间
     welcome: "Welcome to My Creative Space",
+    // 中文：我是老王，一名热衷于创造有趣且实用应用的开发者。
     subtitle: "I'm Lao Wang, a developer passionate about creating fun and useful applications.",
+    // 中文：探索我的应用
     explore: "Explore My Apps",
     philosophy: {
+      // 中文：设计理念
       title: "Philosophy",
       items: [
+        // 中文：极简主义 —— 专注核心价值，拒绝冗余功能。
         { title: "Minimalism", desc: "Focus on core value, reject redundant features.", icon: <Layout className="w-8 h-8 text-blue-500" /> },
+        // 中文：用户体验 —— 每一处细节都经过精心打磨。
         { title: "User Experience", desc: "Every detail is carefully polished.", icon: <Sparkles className="w-8 h-8 text-purple-500" /> },
+        // 中文：技术驱动 —— 使用前沿技术构建稳定应用。
         { title: "Tech Driven", desc: "Build stable apps with cutting-edge tech.", icon: <Code className="w-8 h-8 text-indigo-500" /> },
       ]
     },

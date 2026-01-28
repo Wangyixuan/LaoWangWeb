@@ -19,11 +19,16 @@ export default function PublicNav() {
   }, [])
 
   const t = {
+    // 中文：首页
     home: "Home",
+    // 中文：应用
     apps: "Apps",
+    // 中文：联系我们
     contact: "Contact Us",
     appList: [
+      // 中文：We Feel —— 情绪分享社区
       { name: "We Feel", desc: "Emotion Sharing Community", href: "/apps/wefeel" },
+      // 中文：敬请期待 —— 更多应用即将上线……
       { name: "Coming Soon", desc: "More apps coming soon...", href: "#" },
     ]
   }

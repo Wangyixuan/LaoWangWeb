@@ -4,7 +4,9 @@ import Link from "next/link"
 
 export default function WeFeelPage() {
   const t = {
+    // 中文：隐私政策
     privacy: "Privacy Policy",
+    // 中文：服务条款
     terms: "Terms of Service"
   }
 

@@ -2,24 +2,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 
 export default function AppInfo() {
   const t = {
+    // 中文：功能特性
     title: "Features",
     features: [
       {
+        // 中文：情绪表达 —— 自由分享你的心情与感受
         title: "Emotion Expression",
         description: "Freely share your moods and feelings",
         icon: "💭",
       },
       {
+        // 中文：社区互动 —— 找到与你共鸣的人，彼此支持
         title: "Community Interaction",
         description: "Find people who resonate with you and support each other",
         icon: "🤝",
       },
       {
+        // 中文：隐私保护 —— 安全可靠的数据保护
         title: "Privacy Protection",
         description: "Secure and reliable data protection",
         icon: "🔒",
       },
       {
+        // 中文：多语言支持 —— 支持英文、中文及更多语言
         title: "Multi-language Support",
         description: "Support for English, Chinese and more",
         icon: "🌍",
